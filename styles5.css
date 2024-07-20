@@ -1,0 +1,178 @@
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('PlayfairDisplay.eot'); /* IE9 Compat Modes */
+    src: url('PlayfairDisplay.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('PlayfairDisplay.woff') format('woff'), /* Modern Browsers */
+         url('PlayfairDisplay.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('PlayfairDisplay.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+    font-family: 'Yeseva One';
+    src: url('YesevaOne-Regular.eot'); /* IE9 Compat Modes */
+    src: url('YesevaOne-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('YesevaOne-Regular.woff') format('woff'), /* Modern Browsers */
+         url('YesevaOne-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('YesevaOne-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+html{
+    background-color: #302e30;
+}
+
+.header-container{
+    background-color: #302e30;
+    color: #f0bfff;
+    padding: 14px 20px; 
+    text-decoration: none;
+    display: inline-block; 
+}
+.horizontal-menu {
+    display: flex;
+    justify-content: center; 
+    background-color: #302e30;
+    padding: 0; 
+    margin: 0; 
+}
+
+.horizontal-menu a {
+    background-color: #302e30;
+    color: #f0bfff;
+    padding: 14px 20px; 
+    text-decoration: none;
+    display: inline-block; 
+    transition: background-color 0.3s ease;
+}
+
+.horizontal-menu a:hover {
+    background-color: #79798e;
+}
+
+.horizontal-menu a.active {
+    background-color: #f0bfff;
+    color: #79798e;
+}
+
+main {
+    background-color: #302e30;
+    margin-right: 200px; 
+}
+/*this will cover the surface-color of all the cards*/
+:root {
+  --surface-color: #79798e;
+  --curve: 40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', sans-serif;
+  background-color: #302e30;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.card {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.card__image {      
+  width: 100%;
+  height: auto;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background-color: var(--surface-color);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.card:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(-100%);
+  transition: .2s ease-in-out;
+}
+
+.card__arc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.card__arc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.card:hover .card__header {
+  transform: translateY(0);
+}
+
+.card__thumb {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.card__title {
+  font-size: 1em;
+  margin: 0 0 .3em;
+  color: #f0bfff;
+}
+
+.card__tagline {
+  display: block;
+  margin: 1em 0;
+  font-family: "Playfair Display";  
+  font-size: .8em; 
+  color: #f0bfff;  
+}
+
+.card__status {
+  font-size: .8em;
+  color: #f0bfff;
+}
+
+.card__description {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #f0bfff;
+  font-family: "Playfair Display";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}    
