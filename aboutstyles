@@ -1,0 +1,174 @@
+@font-face {
+  font-family: 'Cardo';
+  src: url('Cardo-Regular.ttf'); /* IE9 Compat Modes */
+  src: url('Cardo-Regular.ttf') format('embedded-opentype'), /* IE6-IE8 */
+       url('Cardo-Regular.ttf') format('woff'), /* Modern Browsers */
+       url('Cardo-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('Cardo-Regular.ttf') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Yeseva One';
+  src: url('YesevaOne-Regular.eot'); /* IE9 Compat Modes */
+  src: url('YesevaOne-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('YesevaOne-Regular.woff') format('woff'), /* Modern Browsers */
+       url('YesevaOne-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('YesevaOne-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+html {
+  background-color: #79798e;
+}
+
+.header-container {
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #79798e;
+  color: #f0bfff;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Yeseva One', sans-serif;
+}
+
+
+.horizontal-menu {
+  display: flex;
+  justify-content: center;
+  background-color: #79798e;
+  padding: 0;
+  margin: 0;
+  font-family: 'Cardo', sans-serif;
+}
+
+.horizontal-menu a {
+  background-color: #79798e;
+  color: #f0bfff;
+  padding: 14px 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.horizontal-menu a:hover {
+  background-color: #79798e;
+}
+
+.horizontal-menu a.active {
+  background-color: #79798e;
+  color: #f0bfff;
+}
+
+.intro-image {
+  width: 20vw;
+  height: 70vh;
+  border-radius: 20%;
+}
+
+
+.who-i-am {
+  font-size: medium;
+  font-family: Cardo, sans-serif;
+  color:  #f0bfff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  text-align: center;
+  margin: 20px auto;
+  height: 80vh;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  
+}
+/*Animating the skills-card*/
+.skills-card {
+  width: 60vmin;
+  height: 50vmin;
+  display: grid;
+  place-content: center;
+  color: #F0BFFF;
+  text-shadow: 0 1px 0 #000;
+  
+  --border-angle: 0turn; /* For animation. */
+  --main-bg: conic-gradient(
+    from var(--border-angle),
+    #302e30,
+    #302e30
+  );
+  
+  border: solid 5px transparent;
+  border-radius: 2em;
+  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #f0bfff, #302e30 99%, transparent);
+  
+  background: 
+    /* padding-box clips this background into the overall element except the border */
+    var(--main-bg) padding-box,
+    /* border-box extends this background to the border space */
+    var(--gradient-border) border-box, 
+    /* Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background. */
+    var(--main-bg) border-box;
+  
+  background-position: center center;
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+.skills-card:hover {
+  animation-play-state: paused;
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+
+
+.skills-card {
+  background-color: #3D3A40;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.skills-card h3 {
+  font-family: 'Yeseva One', cursive;
+  color: #F0BFFF;
+}
+
+.skills-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-card ul li {
+  padding: 5px 0;
+  color: #FFF;
+}
+
+footer {
+  width: 100%;
+  background-color: #302E30;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
